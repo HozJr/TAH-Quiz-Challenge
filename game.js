@@ -1,32 +1,32 @@
 var questions = [
     {
-        title: "question 1:",
-        choices: ["1", "2", "3", "4"],
-        answer: ""
+        title: "What is the capital of Russia:",
+        choices: ["Moscow", "Washington DC", "Tripoli", "Berlin"],
+        answer: "Moscow"
     },
 
     {
-        title: "question 2:",
-        choices: ["1", "2", "3", "4"],
-        answer: ""
+        title: "What is the capital of Minnesota:",
+        choices: ["Little Rock", "Des Moines", "Saint Paul", "Minneapolis"],
+        answer: "Saint Paul"
     },
 
     {
-        title: "question 3:",
-        choices: ["1", "2", "3", "4"],
-        answer: ""
+        title: "What is the capital of Canada:",
+        choices: ["Ontario", "Ottawa", "Juno", "Charlotte Amalie"],
+        answer: "Ottawa"
     },
 
     {
-        title: "question 4:",
-        choices: ["1", "2", "3", "4"],
-        answer: ""
+        title: "What is the capital of Greenland:",
+        choices: ["Buenos Aires", "Reykjavik", "Augusta", "Nuuk"],
+        answer: "Nuuk"
     },
 
     {
-        title: "question 5:",
-        choices: ["1", "2", "3", "4"],
-        answer: ""
+        title: "What is the capital of Zimbabwe:",
+        choices: ["New Delhi", "Harare", "Jakarta", "Beijing"],
+        answer: "Harare"
     },
 ];
 
@@ -85,7 +85,7 @@ function render(questionIndex) {
 function compare(event) {
     var element = event.target;
 
-    if (elementmatches("li")) {
+    if (element.matches("li")) {
         
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
@@ -93,19 +93,19 @@ function compare(event) {
         // Correct
         if (element.textContent == questions[questionIndex].answer) {
             score++;
-            createDiv.textContent = "Correct! The answer is " + question[questionIndex].answer;
+            createDiv.textContent = "Correct! The answer is " + questions[questionIndex].answer;
 
             // Wrong
             } else {
                 secondsLeft = secondsLeft - penalty;
-                createDiv.textContent = "Wrong! The correct answer is: " + question[questionIndex].answer;
+                createDiv.textContent = "Wrong! The correct answer is: " + questions[questionIndex].answer;
             }
     }
 
     questionIndex++;
 
-    if (questionIndex >= question.length) {
-        allDone();createDiv.textContent = "End of quiz!" + " " + "You got " + score + "/" + question.length + " Correct!";
+    if (questionIndex >= questions.length) {
+        allDone();createDiv.textContent = "End of quiz!" + " " + "You got " + score + "/" + questions.length + " Correct!";
 
     } else {
         render(questionIndex);
@@ -134,7 +134,7 @@ function allDone() {
     if (secondsLeft >= 0) {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
-        clearInterval(holdInterval);
+        clearInterval(holdTimer);
         createP.textContent = "Your final score is: " + timeRemaining;
 
         questionsDiv.appendChild(createP2);
@@ -161,6 +161,8 @@ function allDone() {
     createSubmit.setAttribute("id", "Submit");
     createSubmit.textContent = "Submit";
 
+    questionsDiv.appendChild(createSubmit);
+
     // Event listener for initials and local storage
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
@@ -182,7 +184,7 @@ function allDone() {
                 allScores = JSON.parse(allScores);
             }
             allScores.push(finalScore);
-            var newScore = JSONstringify(allScores);
+            var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
             window.location.replace("./HighScore.html");
         }
