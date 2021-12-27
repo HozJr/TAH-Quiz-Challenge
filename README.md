@@ -14,6 +14,6 @@ https://hozjr.github.io/TAH-Quiz-Challenge/
 ## Contribution
 Made with ❤️ by Tedd Hauser Jr.
 
-![image](https://user-images.githubusercontent.com/94255210/147434888-d671ca58-139f-4a28-90fa-7eb09002e86f.png)
-![image](https://user-images.githubusercontent.com/94255210/147434902-3245509f-3842-4938-b97e-decc255c3537.png)
-![image](https://user-images.githubusercontent.com/94255210/147434908-0adebb26-403d-4998-8b08-bc1bb8e548a4.png)
+![image](https://user-images.githubusercontent.com/94255210/147434938-099012a4-fe02-4844-9f5a-8e763fe97433.png)
+![image](https://user-images.githubusercontent.com/94255210/147434944-b8144880-6753-4d85-ab4c-715d2c4b67c4.png)
+![image](https://user-images.githubusercontent.com/94255210/147434955-1992d505-cf1e-451c-b54e-98b7307db69a.png)
