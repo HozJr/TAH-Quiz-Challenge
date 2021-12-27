@@ -34,19 +34,6 @@
     text-decoration: none;
 }
 
-
-
-#clear {
-    background-color: blue;
-    position: relative;
-    padding: 10px;
-    font-size: 20px;
-    color: white;
-    top: 30%;
-    right: 5%;
-    text-align: center;
-}
-
 button {
     border-radius: 8px;
 }
